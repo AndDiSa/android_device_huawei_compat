@@ -46,6 +46,7 @@ vendor/bin/start_connectivity_hisi						u:object_r:hi110x_daemon_exec:s0
 /splash2(/.*)?                                  				u:object_r:splash_data_file:s0
 
 # /dev
+/dev/mali0									u:object_r:gpu_device:s0
 /dev/tc_ns_client                               				u:object_r:teecd_device:s0
 
 # Block devices
@@ -58,3 +59,18 @@ vendor/bin/start_connectivity_hisi						u:object_r:hi110x_daemon_exec:s0
 /dev/block/by-name/system        						u:object_r:system_block_device:s0
 /dev/block/by-name/vendor        						u:object_r:system_block_device:s0
 /dev/block/by-name/version       						u:object_r:metadata_block_device:s0
+
+/dev/block/by-name/cache							u:object_r:cache_block_device:s0
+/dev/block/by-name/nvme								u:object_r:nve_block_device:s0
+/dev/block/by-name/splash2							u:object_r:splash_block_device:s0
+/dev/block/by-name/modem_secure							u:object_r:modem_secure_device:s0
+/dev/block/by-name/modemnvm_cust						u:object_r:modemnvm_block_device:s0
+/dev/block/by-name/modemnvm_system						u:object_r:modemnvm_block_device:s0
+/dev/block/by-name/modemnvm_backup						u:object_r:modemnvm_block_device:s0
+/dev/block/by-name/modemnvm_update						u:object_r:modemnvm_block_device:s0
+/dev/block/by-name/modemnvm_factory						u:object_r:modemnvm_block_device:s0
+/dev/block/by-name/misc								u:object_r:misc_block_device:s0
+/dev/block/by-name/oeminfo							u:object_r:oeminfo_nvm_device:s0
+/dev/block/by-name/userdata							u:object_r:userdata_block_device:s0
+/dev/block/by-name/kernel                  					u:object_r:boot_block_device:s0
+/dev/block/by-name/recovery_ramdisk            					u:object_r:recovery_block_device:s0

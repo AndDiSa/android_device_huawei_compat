@@ -2,3 +2,9 @@ typeattribute system_block_device super_block_device_type;
 
 # TEE
 type teecd_device, dev_type;
+
+type nve_block_device, dev_type;
+type splash_block_device, dev_type;
+
+type modem_secure_device, dev_type;
+type modemnvm_block_device, dev_type;
