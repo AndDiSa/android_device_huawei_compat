@@ -1,13 +1,11 @@
 # Board specific SELinux policy variable definitions
-SEPOLICY_PATH := device/hisi/sepolicy
+SEPOLICY_PATH := device/huawei/sepolicy
 
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
-    $(SEPOLICY_PATH)/common/private
+    $(SEPOLICY_PATH)/private
 
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += \
-    $(SEPOLICY_PATH)/common/public \
-    $(SEPOLICY_PATH)/lineage/public
+    $(SEPOLICY_PATH)/public
 
 BOARD_VENDOR_SEPOLICY_DIRS += \
-    $(SEPOLICY_PATH)/common/vendor \
-    $(SEPOLICY_PATH)/lineage/vendor
+    $(SEPOLICY_PATH)/vendor

@@ -1,0 +1,4 @@
+type hal_fmradio_hwservice, hwservice_manager_type;
+type hal_hisupl_hwservice, hwservice_manager_type;
+type hal_mediacomm_hwservice, hwservice_manager_type;
+type hal_libteec_hwservice, hwservice_manager_type;

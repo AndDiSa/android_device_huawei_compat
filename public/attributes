@@ -1,0 +1,5 @@
+# HALs
+hal_attribute_huawei(fmradio)
+hal_attribute_huawei(hisupl)
+hal_attribute_huawei(mediacomm)
+hal_attribute_huawei(libteec)

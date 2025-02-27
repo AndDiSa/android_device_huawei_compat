@@ -1,0 +1,10 @@
+type hal_mediacomm_default, domain;
+hal_server_domain(hal_mediacomm_default, hal_mediacomm)
+
+type hal_mediacomm_default_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(hal_mediacomm_default)
+
+# HwBinder IPC from client to server
+binder_call(hal_mediacomm_client, hal_mediacomm_server)
+
+add_hwservice(hal_mediacomm_server, hal_mediacomm_hwservice)
