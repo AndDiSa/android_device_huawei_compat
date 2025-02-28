@@ -1,0 +1,4 @@
+# HwBinder IPC from client to server
+binder_call(hal_radio_client, hal_radio_server)
+
+add_hwservice(hal_radio_server, hal_radio_hwservice)

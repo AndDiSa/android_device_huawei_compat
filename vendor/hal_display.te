@@ -1,0 +1,4 @@
+# HwBinder IPC from client to server
+binder_call(hal_display_client, hal_display_server)
+
+add_hwservice(hal_display_server, hal_display_hwservice)

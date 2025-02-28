@@ -1,5 +1,9 @@
 # HALs
-hal_attribute_huawei(fmradio)
+hal_attribute_huawei(display)
+hal_attribute_huawei(fm)
 hal_attribute_huawei(hisupl)
-hal_attribute_huawei(mediacomm)
+hal_attribute_huawei(hwfactoryinterface)
 hal_attribute_huawei(libteec)
+hal_attribute_huawei(mediacomm)
+hal_attribute_huawei(perfgenius)
+hal_attribute_huawei(radio)

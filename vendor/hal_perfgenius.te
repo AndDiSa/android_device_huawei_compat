@@ -1,0 +1,4 @@
+# HwBinder IPC from client to server
+binder_call(hal_perfgenius_client, hal_perfgenius_server)
+
+add_hwservice(hal_perfgenius_server, hal_perfgenius_hwservice)
