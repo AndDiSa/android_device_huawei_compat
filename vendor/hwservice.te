@@ -5,4 +5,3 @@ type hal_hwfactoryinterface_hwservice, hwservice_manager_type;
 type hal_libteec_hwservice, hwservice_manager_type;
 type hal_mediacomm_hwservice, hwservice_manager_type;
 type hal_perfgenius_hwservice, hwservice_manager_type;
-type hal_radio_hwservice, hwservice_manager_type;
