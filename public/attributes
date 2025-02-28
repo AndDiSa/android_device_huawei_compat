@@ -1,5 +1,4 @@
 # HALs
-hal_attribute_huawei(display)
 hal_attribute_huawei(fm)
 hal_attribute_huawei(hisupl)
 hal_attribute_huawei(hwfactoryinterface)

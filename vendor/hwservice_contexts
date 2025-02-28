@@ -10,8 +10,8 @@ vendor.huawei.hardware.camera.cfgsvr::IHwCamCfgSvr                          			u
 vendor.huawei.hardware.camera.factory::ICameraFactory                           		u:object_r:hal_camera_hwservice:s0
 vendor.huawei.hardware.camera.camResource::IHwCameraResourceService             		u:object_r:hal_camera_hwservice:s0
 vendor.huawei.hardware.gnss::IHWGnss                                        			u:object_r:hal_gnss_hwservice:s0
-vendor.huawei.hardware.graphics.displayeffect::IEffect                          		u:object_r:hal_display_hwservice:s0
-vendor.huawei.hardware.graphics.displayeffect::IDisplayEffectClient             		u:object_r:hal_display_hwservice:s0
+vendor.huawei.hardware.graphics.displayeffect::IEffect                          		u:object_r:hal_graphics_composer_hwservice:s0
+vendor.huawei.hardware.graphics.displayeffect::IDisplayEffectClient             		u:object_r:hal_graphics_composer_hwservice:s0
 vendor.huawei.hardware.graphics.gpucommon::IGpuCommon                           		u:object_r:hal_graphics_composer_hwservice:s0
 vendor.huawei.hardware.graphics.mediacomm::IMediaComm                       			u:object_r:hal_mediacomm_hwservice:s0
 vendor.huawei.hardware.hisupl::ISuplclienttoserverInterface                 			u:object_r:hal_hisupl_hwservice:s0
