@@ -28,3 +28,8 @@ type sysfs_hungtask_vmheart, sysfs_type, fs_type;
 type vendor_sysfs_graphics, sysfs_type, fs_type;
 type sysfs_framebuffer, sysfs_type, fs_type;
 
+type hi110x_vendor_file, file_type, vendor_file_type;
+type hwemerffu_fw_file, file_type, vendor_file_type;
+type isp_vendor_file, file_type, vendor_file_type;
+type hifi_vendor_file, file_type, vendor_file_type;
+type ncfg_nv_file, file_type, vendor_file_type;
