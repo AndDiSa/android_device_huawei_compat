@@ -1,6 +1,5 @@
-type hal_fm_hwservice, hwservice_manager_type;
-type hal_hisupl_hwservice, hwservice_manager_type;
-type hal_hwfactoryinterface_hwservice, hwservice_manager_type;
-type hal_libteec_hwservice, hwservice_manager_type;
-type hal_mediacomm_hwservice, hwservice_manager_type;
-type hal_perfgenius_hwservice, hwservice_manager_type;
+type hal_fm_hwservice, hwservice_manager_type, protected_hwservice;
+type hal_hisupl_hwservice, hwservice_manager_type, protected_hwservice;
+type hal_hwfactoryinterface_hwservice, hwservice_manager_type, protected_hwservice;
+type hal_libteec_hwservice, hwservice_manager_type, protected_hwservice;
+type hal_perfgenius_hwservice, hwservice_manager_type, protected_hwservice;

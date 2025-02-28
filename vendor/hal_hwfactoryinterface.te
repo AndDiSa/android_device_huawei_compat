@@ -1,4 +1,0 @@
-# HwBinder IPC from client to server
-binder_call(hal_hwfactoryinterface_client, hal_hwfactoryinterface_server)
-
-add_hwservice(hal_hwfactoryinterface_server, hal_hwfactoryinterface_hwservice)

@@ -6,5 +6,6 @@ init_daemon_domain(hal_libteec_default)
 
 # HwBinder IPC from client to server
 binder_call(hal_libteec_client, hal_libteec_server)
+binder_call(hal_libteec_server, hal_libteec_client)
 
-add_hwservice(hal_libteec_server, hal_libteec_hwservice)
+hal_attribute_hwservice(hal_libteec, hal_libteec_hwservice)

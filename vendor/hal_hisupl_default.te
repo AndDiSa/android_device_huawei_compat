@@ -6,5 +6,6 @@ init_daemon_domain(hal_hisupl_default)
 
 # HwBinder IPC from client to server
 binder_call(hal_hisupl_client, hal_hisupl_server)
+binder_call(hal_hisupl_server, hal_hisupl_client)
 
-add_hwservice(hal_hisupl_server, hal_hisupl_hwservice)
+hal_attribute_hwservice(hal_hisupl, hal_hisupl_hwservice)

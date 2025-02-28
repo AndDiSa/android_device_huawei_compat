@@ -6,5 +6,6 @@ init_daemon_domain(hal_fm_default)
 
 # HwBinder IPC from client to server
 binder_call(hal_fm_client, hal_fm_server)
+binder_call(hal_fm_server, hal_fm_client)
 
-add_hwservice(hal_fm_server, hal_fm_hwservice)
+hal_attribute_hwservice(hal_fm, hal_fm_hwservice)
