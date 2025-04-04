@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "vendor.lineage.livedisplay@2.1-service.hisi"
+#define LOG_TAG "vendor.lineage.livedisplay@2.1-service.huawei"
 
 #include <android-base/logging.h>
 #include <binder/ProcessState.h>
@@ -26,7 +26,7 @@ using android::hardware::configureRpcThreadpool;
 using android::hardware::joinRpcThreadpool;
 
 using ::vendor::lineage::livedisplay::V2_0::IDisplayColorCalibration;
-using ::vendor::lineage::livedisplay::V2_0::hisi::DisplayColorCalibration;
+using ::vendor::lineage::livedisplay::V2_0::huawei::DisplayColorCalibration;
 
 int main() {
     android::sp<IDisplayColorCalibration> dcc = new DisplayColorCalibration();

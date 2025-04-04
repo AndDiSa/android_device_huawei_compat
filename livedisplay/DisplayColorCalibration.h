@@ -22,7 +22,7 @@ namespace vendor {
 namespace lineage {
 namespace livedisplay {
 namespace V2_0 {
-namespace hisi {
+namespace huawei {
 
 using ::android::hardware::hidl_vec;
 using ::android::hardware::Return;
@@ -42,7 +42,7 @@ class DisplayColorCalibration : public IDisplayColorCalibration {
     std::mutex mCachedColorsMutex;
 };
 
-}  // namespace hisi
+}  // namespace huawei
 }  // namespace V2_0
 }  // namespace livedisplay
 }  // namespace lineage

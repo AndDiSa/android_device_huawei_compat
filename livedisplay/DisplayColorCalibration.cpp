@@ -33,7 +33,7 @@ namespace vendor {
 namespace lineage {
 namespace livedisplay {
 namespace V2_0 {
-namespace hisi {
+namespace huawei {
 
 static constexpr const char* kColorPath = "/sys/devices/virtual/graphics/fb0/lcd_color_temperature";
 
@@ -88,7 +88,7 @@ Return<bool> DisplayColorCalibration::setCalibration(const hidl_vec<int32_t>& rg
     return WriteStringToFile(Trim(contents), kColorPath, true);
 }
 
-}  // namespace hisi
+}  // namespace huawei
 }  // namespace V2_0
 }  // namespace livedisplay
 }  // namespace lineage
