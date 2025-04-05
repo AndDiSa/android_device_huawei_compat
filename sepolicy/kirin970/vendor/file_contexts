@@ -1,0 +1,19 @@
+# file contexts kirin970
+
+/vendor/bin/hw/android.hardware.ir-service.huawei				u:object_r:hal_ir_default_exec:s0
+
+/vendor/bin/bms_auth								u:object_r:hal_bms_default_exec:s0
+/vendor/bin/bms_behavior							u:object_r:hal_bms_default_exec:s0
+/vendor/bin/bms_event								u:object_r:hal_bms_default_exec:s0
+/vendor/bin/bms_protocol							u:object_r:hal_bms_default_exec:s0
+/vendor/bin/bms_soc								u:object_r:hal_bms_default_exec:s0
+/vendor/bin/bsoh								u:object_r:hal_bsoh_default_exec:s0
+/vendor/bin/fusion_daemon							u:object_r:hal_gnss_default_exec:s0
+/vendor/bin/glgps4774								u:object_r:hal_gnss_default_exec:s0
+/vendor/bin/gpsdaemon								u:object_r:hal_gnss_default_exec:s0
+/vendor/bin/lhd4774								u:object_r:hal_gnss_default_exec:s0
+/vendor/bin/usb_port								u:object_r:hal_usb_default_exec:s0
+
+# Block devices
+/dev/block/platform/ff3c0000.ufs/by-name/super   				u:object_r:super_block_device:s0
+/dev/block/platform/ff3b0000.ufs/by-name/patch       				u:object_r:metadata_block_device:s0

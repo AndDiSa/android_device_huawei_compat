@@ -1,15 +1,20 @@
 # file contexts
 
-/vendor/bin/hw/android.hardware.drm@1.1-service.widevine			u:object_r:vendor_hal_drm_widevine_exec:s0
+/vendor/bin/hw/android.hardware.drm@1.1-service.widevine			u:object_r:hal_drm_default_exec:s0
+/vendor/bin/hw/android.hardware.drm@1.2-service.widevine			u:object_r:hal_drm_default_exec:s0
 /vendor/bin/hw/android.hardware.light-service.huawei				u:object_r:hal_light_default_exec:s0
 /vendor/bin/hw/android.hardware.power-service.pixel-libperfmgr			u:object_r:hal_power_default_exec:s0
 /vendor/bin/hw/android.hardware.secure_element@1.0-service.hisi			u:object_r:hal_secure_element_default_exec:s0
 /vendor/bin/hw/vendor.huawei.hardware.biometrics.fingerprint@2.1-service	u:object_r:hal_fingerprint_default_exec:s0
+/vendor/bin/hw/vendor.huawei.hardware.biometrics.fingerprint@2.2-service	u:object_r:hal_fingerprint_default_exec:s0
 /vendor/bin/hw/vendor.huawei.hardware.fm@1.0-service				u:object_r:hal_fm_default_exec:s0
+/vendor/bin/hw/vendor.huawei.hardware.gnss@1.0-service				u:object_r:hal_gnss_default_exec:s0
 /vendor/bin/hw/vendor.huawei.hardware.gnss@1.2-service				u:object_r:hal_gnss_default_exec:s0
 /vendor/bin/hw/vendor.huawei.hardware.graphics.mediacomm@2.0-service		u:object_r:hal_graphics_composer_default_exec:s0
+/vendor/bin/hw/vendor.huawei.hardware.graphics.mediacomm@2.1-service		u:object_r:hal_graphics_composer_default_exec:s0
 /vendor/bin/hw/vendor.huawei.hardware.hisupl@1.0-service			u:object_r:hal_hisupl_default_exec:s0
 /vendor/bin/hw/vendor.huawei.hardware.libteec@2.0-service			u:object_r:hal_libteec_default_exec:s0
+/vendor/bin/hw/vendor.huawei.hardware.libteec@3.0-service			u:object_r:hal_libteec_default_exec:s0
 /vendor/bin/hw/vendor.huawei.hardware.tp@1.0-service				u:object_r:hal_lineage_touch_default_exec:s0
 /vendor/bin/hw/vendor.lineage.livedisplay@2.1-service.huawei			u:object_r:hal_lineage_livedisplay_sysfs_exec:s0
 /vendor/bin/hw/vendor.lineage.touch@1.0-service.huawei				u:object_r:hal_lineage_touch_default_exec:s0
