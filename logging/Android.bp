@@ -13,6 +13,7 @@ cc_library_shared {
 cc_library_shared {
     name: "libimonitor",
     proprietary: true,
+    recovery_available: true,
     defaults: ["hidl_defaults"],
     srcs: [
         "cjson.cpp",
@@ -35,3 +36,15 @@ cc_library_shared {
     ],
 }
 
+cc_library_shared {
+    name: "libhwlog",
+    proprietary: true,
+    recovery_available: true,
+    defaults: ["hidl_defaults"],
+    srcs: [
+        "hwlog.cpp",
+    ],
+    shared_libs: [
+        "liblog",
+    ],
+}
