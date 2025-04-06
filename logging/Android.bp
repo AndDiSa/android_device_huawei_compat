@@ -11,18 +11,6 @@ cc_library_shared {
 }
 
 cc_library_shared {
-    name: "libhwlog",
-    proprietary: true,
-    defaults: ["hidl_defaults"],
-    srcs: [
-        "hwlog.cpp",
-    ],
-    shared_libs: [
-        "liblog",
-    ],
-}
-
-cc_library_shared {
     name: "libimonitor",
     proprietary: true,
     defaults: ["hidl_defaults"],

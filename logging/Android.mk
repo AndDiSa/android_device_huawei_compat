@@ -1,0 +1,13 @@
+ifneq ($(filter hi3660 kirin710 kirin970,$(TARGET_BOARD_PLATFORM)),)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libhwlog
+LOCAL_SRC_FILES := hwlog.cpp
+LOCAL_SHARED_LIBRARIES := liblog
+LOCAL_MULTILIB := both
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_SHARED_LIBRARY)
+
+endif
