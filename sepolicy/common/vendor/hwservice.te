@@ -3,3 +3,4 @@ type hal_hisupl_hwservice, hwservice_manager_type, protected_hwservice;
 type hal_hwfactoryinterface_hwservice, hwservice_manager_type, protected_hwservice;
 type hal_libteec_hwservice, hwservice_manager_type, protected_hwservice;
 type hal_perfgenius_hwservice, hwservice_manager_type, protected_hwservice;
+type hal_touchscreen_hwservice, hwservice_manager_type, protected_hwservice;
