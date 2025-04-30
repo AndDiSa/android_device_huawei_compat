@@ -1,3 +1,6 @@
 # file contexts kirin980
 
+/vendor/bin/bsoh								u:object_r:hal_bsoh_default_exec:s0
+/vendor/bin/powerctl								u:object_r:hal_power_default_exec:s0
+
 /vendor/modem/modem_driver(/.*)?                    				u:object_r:modem_vendor_file:s0
