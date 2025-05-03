@@ -1,20 +1,14 @@
 # file contexts kirin970
 
-/vendor/bin/hw/android.hardware.ir-service.huawei				u:object_r:hal_ir_default_exec:s0
 /vendor/bin/hw/android.hardware.nfc@1.2-service.sn100x				u:object_r:hal_nfc_default_exec:s0
 /vendor/bin/hw/android.hardware.nfc@1.2-service.st				u:object_r:hal_nfc_default_exec:s0
-/vendor/bin/hw/vendor.huawei.hardware.nfc@1.0-service				u:object_r:hal_nfc_default_exec:s0
-/vendor/bin/hw/vendor.huawei.hardware.dolby.dms@1.0-service			u:object_r:hal_audio_default_exec:s0
 
 /vendor/bin/bms_auth								u:object_r:hal_bms_default_exec:s0
 /vendor/bin/bms_behavior							u:object_r:hal_bms_default_exec:s0
 /vendor/bin/bms_event								u:object_r:hal_bms_default_exec:s0
 /vendor/bin/bms_protocol							u:object_r:hal_bms_default_exec:s0
 /vendor/bin/bms_soc								u:object_r:hal_bms_default_exec:s0
-/vendor/bin/bsoh								u:object_r:hal_bsoh_default_exec:s0
-/vendor/bin/fusion_daemon							u:object_r:hal_gnss_default_exec:s0
 /vendor/bin/glgps4774								u:object_r:hal_gnss_default_exec:s0
-/vendor/bin/gpsdaemon								u:object_r:hal_gnss_default_exec:s0
 /vendor/bin/lhd4774								u:object_r:hal_gnss_default_exec:s0
 /vendor/bin/usb_port								u:object_r:hal_usb_default_exec:s0
 
