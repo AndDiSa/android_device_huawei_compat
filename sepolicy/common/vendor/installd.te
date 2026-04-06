@@ -1,0 +1,5 @@
+# ==========================================
+# installd.te - Package Installation
+# ==========================================
+# Allow installd to query quotas on the TEE (Secure Storage) partition
+allow installd teecd_data_file:filesystem quotaget;

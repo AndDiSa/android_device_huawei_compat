@@ -1,0 +1,12 @@
+# ==========================================
+# Hardware and Sysfs Access
+# ==========================================
+# Allow power HAL to write to CPU scheduling and power gating sysfs nodes
+allow hal_power_default sysfs_devices_system_cpu:file write;
+allow hal_power_default sysfs_pg:file { open write };
+
+# ==========================================
+# Properties
+# ==========================================
+# This macro legally grants the property_socket write access to set rendering properties
+set_prop(hal_power_default, vendor_power_prop)

@@ -1,0 +1,5 @@
+# ==========================================
+# network_stack.te - Android Network Stack
+# ==========================================
+# (Active rules would go here; currently mostly handled by global netdomain)
+# dontaudit network_stack fs_bpf:file { read write };

@@ -1,0 +1,13 @@
+# ==========================================
+# init.te - Android Core Initialization
+# ==========================================
+allow init hwservicemanager:binder { call transfer };
+allow init same_process_hal_file:file execute;
+
+# Hardware configuration
+allow init sysfs_firmware:file { open setattr write };
+allow init system_data_file:dir { ioctl open read setattr };
+
+# Mount the Secure Storage (TEE) filesystem
+allow init teecd_data_file:dir mounton;
+allow init teecd_data_file:filesystem { mount relabelfrom relabelto };

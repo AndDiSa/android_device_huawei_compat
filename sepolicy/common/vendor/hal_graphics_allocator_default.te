@@ -1,0 +1,4 @@
+# ==========================================
+# hal_graphics_allocator_default.te - Graphics Memory
+# ==========================================
+allow hal_graphics_allocator_default graphics_device:chr_file { ioctl open read write };
