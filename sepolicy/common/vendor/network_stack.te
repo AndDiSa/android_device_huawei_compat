@@ -2,4 +2,5 @@
 # network_stack.te - Android Network Stack
 # ==========================================
 # (Active rules would go here; currently mostly handled by global netdomain)
-# dontaudit network_stack fs_bpf:file { read write };
+
+dontaudit network_stack fs_bpf:file { read write getattr map open ioctl lock append watch watch_reads };

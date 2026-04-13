@@ -8,8 +8,6 @@ type oeminfo_nvm_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(oeminfo_nvm) 
 
-# Ensure the violator attribute is present to bypass Treble neverallows for data sharing
-typeattribute oeminfo_nvm data_between_core_and_vendor_violators;
 allow oeminfo_nvm self:capability chown;
 
 # ==========================================

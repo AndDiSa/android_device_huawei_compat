@@ -1,9 +1,6 @@
 # ==========================================
 # Domain and Attributes
 # ==========================================
-attribute binder_in_vendor_violators; 
-typeattribute hal_camera_default binder_in_vendor_violators; 
-
 # ==========================================
 # Binder & HIDL IPC (Inter-Process Communication)
 # ==========================================
@@ -57,3 +54,13 @@ get_prop(hal_camera_default, vendor_hw_camera_prop)
 set_prop(hal_camera_default, vendor_hw_camera_prop) 
 get_prop(hal_camera_default, vendor_fingerprint_prop) 
 
+get_prop(hal_camera_default, vendor_camera_prop)
+allow hal_camera_default device_latency:chr_file rw_file_perms;
+allow hal_camera_default hal_perfgenius_hwservice:hwservice_manager find;
+allow hal_camera_default memtrackproxy_service:service_manager find;
+typeattribute hal_camera_default hal_sensors_client; # Treble-safe way to access sensors
+
+allow hal_camera_default sysfs_cpufreq:dir search;
+allow hal_camera_default sysfs_cpufreq:file { read open getattr };
+allow hal_camera_default sysfs_devfreq:dir search;
+allow hal_camera_default sysfs_devfreq:file { read open getattr };

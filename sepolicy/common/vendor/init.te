@@ -10,4 +10,28 @@ allow init system_data_file:dir { ioctl open read setattr };
 
 # Mount the Secure Storage (TEE) filesystem
 allow init teecd_data_file:dir mounton;
+allow init teecd_data_file:file { getattr read open ioctl setattr };
 allow init teecd_data_file:filesystem { mount relabelfrom relabelto };
+
+# Allow mkswap to initialize ZRAM
+allow toolbox ram_device:blk_file rw_file_perms;
+allowxperm toolbox ram_device:blk_file ioctl { 0x1272 };
+
+# Allow init to set permissions/ownership on CPU frequency nodes
+allow init sysfs_cpufreq:file setattr;
+
+# Allow init to create and set attributes for hisecd socket
+allow init socket_device:sock_file { create setattr };
+
+# Allow init to write to zram0
+allow init ram_device:blk_file write;
+
+allow init sysfs_fs_ext4_features:file w_file_perms;
+
+allow init extra_input_device:chr_file { read open ioctl };
+
+allow init sysfs_hisi_product:file r_file_perms;
+
+allow init sysfs_vibrator:file { open write setattr };
+allow init sysfs_fs_ext4_features:file { open write };
+allow init sysfs:file { setattr };

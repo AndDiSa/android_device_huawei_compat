@@ -63,3 +63,30 @@ allow hi110x_daemon vendor_toolbox_exec:file execute_no_trans;
 
 set_prop(hi110x_daemon, vendor_wifi_prop)
 
+# Allow the connectivity daemon to read the fingerprint state and manage its logs
+get_prop(hi110x_daemon, vendor_fingerprint_prop)
+allow hi110x_daemon vendor_data_file:dir create_dir_perms;
+allow hi110x_daemon vendor_data_file:file create_file_perms;
+allow hi110x_daemon vendor_data_file:lnk_file create_file_perms;
+allow hi110x_daemon kmsg_device:chr_file rw_file_perms;
+
+# Allow the vendor daemon to read the spoofed connectivity firmware
+allow hi110x_daemon vendor_connectivity_fw:file { read open getattr };
+
+# Allow daemon to search CPU freq directories
+allow hi110x_daemon sysfs_cpufreq:dir search;
+allow hi110x_daemon sysfs_cpufreq:file { read open };
+
+allow hi110x_daemon hal_system_suspend_service:service_manager find;
+binder_call(hi110x_daemon, system_suspend_server)
+
+# Allow daemon to use binder and hwbinder
+binder_use(hi110x_daemon)
+hwbinder_use(hi110x_daemon)
+
+# Allow daemon to register with hwservicemanager
+allow hi110x_daemon hwservicemanager_prop:file { read getattr map open };
+
+# Allow two-way binder communication with system_server
+binder_call(hi110x_daemon, system_server)
+binder_call(system_server, hi110x_daemon)

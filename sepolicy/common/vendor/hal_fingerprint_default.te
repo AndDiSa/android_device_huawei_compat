@@ -14,7 +14,7 @@ allow hal_fingerprint_default tee:unix_stream_socket connectto;
 # IPC & Properties
 # ==========================================
 get_prop(hal_fingerprint_default, vendor_fingerprint_prop)
-allow hal_fingerprint_default hal_power_default:binder call;
+#allow hal_fingerprint_default hal_power_default:binder call;
 
 # ==========================================
 # Logging
@@ -26,3 +26,13 @@ allow hal_fingerprint_default vendor_log_file:file { open read };
 allow hal_fingerprint_default vendor_kernel_log_file:dir { search write add_name };
 allow hal_fingerprint_default vendor_kernel_log_file:file { create open read write };
 
+#allow hal_fingerprint_default hal_power_service:service_manager find;
+binder_call(hal_fingerprint_default, hal_power_default)
+
+# Allow fingerprint to read its temp log file
+allow hal_fingerprint_default vendor_data_file:file { read open };
+
+# Legally grant the fingerprint HAL access to the Power HAL
+#typeattribute hal_fingerprint_default hal_power_client;
+
+hal_client_domain(hal_fingerprint_default, hal_power)

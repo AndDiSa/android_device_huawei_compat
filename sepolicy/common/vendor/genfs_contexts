@@ -11,12 +11,17 @@ genfscon sysfs /devices/platform/e8970000.mali/devfreq/gpufreq/max_freq    u:obj
 
 # Battery and Fuel Gauge (Coulomb Counter)
 genfscon sysfs /devices/platform/balong_power/state                        u:object_r:modem_state_file:s0
+genfscon sysfs /devices/platform/battery/power_supply/Battery/capacity     u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/coul_core                                 u:object_r:sysfs_power:s0
 genfscon sysfs /devices/virtual/ina231/ina231_0/ina231_value               u:object_r:sysfs_framebuffer:s0
 genfscon sysfs /devices/virtual/ina231/ina231_1/ina231_value               u:object_r:sysfs_framebuffer:s0
 
 # Thermal / Guard Monitoring
 genfscon sysfs /bus/platform/drivers/huawei,camcfgdev/guard_thermal        u:object_r:sysfs_pg:s0
+
+genfscon sysfs /devices/platform/fffc0000.ddr_devfreq/devfreq/ddrfreq      u:object_r:sysfs_devfreq:s0
+genfscon sysfs /devices/virtual/thermal                                    u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/platform/huawei_touch                              u:object_r:sysfs_touch:s0
 
 ###########################################
 # DISPLAY & GRAPHICS (LCD Panel)
@@ -55,4 +60,8 @@ genfscon sysfs /class/sensors/sensorhub_dump                               u:obj
 
 # Touchscreen Firmware/Status
 genfscon sysfs /devices/platform/huawei_ts_kit/debug_info                  u:object_r:sysfs_touchscreen:s0
+
+genfscon proc /log-usertype                                                u:object_r:proc_log_usertype:s0
+
+genfscon sysfs /firmware/devicetree/base/hisi,product_name                 u:object_r:sysfs_hisi_product:s0
 

@@ -39,3 +39,14 @@ allow vendor_hisi_init wifi_vendor_data_file:file { create getattr open write };
 # ==========================================
 # Hisi init needs to override standard permissions to configure the connectivity chip type
 set_prop(vendor_hisi_init, vendor_wifi_prop) 
+
+# Allow hisi_init to read the boot block device
+allow vendor_hisi_init boot_block_device:blk_file { read open getattr };
+allow vendor_hisi_init block_device:dir search;
+
+# Allow hisi_init to setup bluetooth mac files in /data/vendor/bluedroid
+allow vendor_hisi_init vendor_data_file:dir { write add_name };
+allow vendor_hisi_init vendor_data_file:file { create write open getattr };
+
+dontaudit vendor_hisi_init self:capability { dac_override dac_read_search };
+

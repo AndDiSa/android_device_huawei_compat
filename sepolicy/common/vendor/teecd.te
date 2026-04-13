@@ -22,9 +22,16 @@ allow tee hal_keymaster_default:process getattr;
 # ==========================================
 # Device Nodes and Secure Data
 # ==========================================
-allow tee teecd_data_file:dir search;
-allow tee teecd_data_file:file { getattr open read setattr write };
+#allow tee teecd_data_file:dir search;
+#allow tee teecd_data_file:file { getattr read write };
 allow tee teecd_device:chr_file { ioctl open read write };
 
 # Allow the data file label to associate with the filesystem
 allow teecd_data_file self:filesystem associate;
+
+# Acknowledge this domain violates Treble data separation
+typeattribute tee data_between_core_and_vendor_violators;
+
+# Grant TEE access to its fingerprint calibration backups
+allow tee teecd_data_file:dir create_dir_perms;
+allow tee teecd_data_file:file create_file_perms;

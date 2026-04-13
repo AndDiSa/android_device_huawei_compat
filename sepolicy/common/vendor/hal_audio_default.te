@@ -27,3 +27,5 @@ wakelock_use(hal_audio_default)
 
 # The Treble-safe way to allow binder calls to the suspend service
 binder_call(hal_audio_default, system_suspend_server)
+
+get_prop(hal_audio_default, vendor_fingerprint_prop)

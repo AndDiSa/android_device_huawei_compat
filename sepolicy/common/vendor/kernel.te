@@ -19,7 +19,7 @@ allow kernel { nve_device extra_input_device kmsg_device }:chr_file { create set
 # Logging Devices & Files
 # ==========================================
 allow kernel hwlog_exception_device:chr_file { open write };
-allow kernel hwlog_device:chr_file { create setattr open write };
+allow kernel hwlog_device:chr_file rw_file_perms;
 
 allow kernel vendor_kernel_log_file:dir { getattr search };
 allow kernel vendor_kernel_log_file:file { read open setattr };
@@ -30,4 +30,19 @@ allow kernel vendor_kernel_log_file:file { read open setattr };
 allow kernel device:dir { add_name write };
 allow kernel sysfs_devices_system_cpu:file write;
 allow kernel proc_log_usertype:file r_file_perms;
+
+# Allow kernel workers to manage CPU interactive governor and scaling
+allow kernel sysfs_cpufreq:dir search;
+allow kernel sysfs_cpufreq:file { open write };
+
+allow kernel boot_block_device:blk_file rw_file_perms;
+allow kernel huawei_data_file:dir { read open setattr };
+
+dontaudit kernel sysfs_batteryinfo:file { read open };
+
+dontaudit kernel device:chr_file { create setattr };
+dontaudit kernel device:blk_file { create setattr };
+
+dontaudit kernel huawei_data_file:dir { search getattr };
+dontaudit kernel huawei_data_file:file { getattr read append open setattr };
 

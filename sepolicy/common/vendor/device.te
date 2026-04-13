@@ -11,7 +11,7 @@ type oeminfo_nvm_block_device, dev_type;
 type sd_device, dev_type;
 type sec_storage_block_device, dev_type;
 type splash_block_device, dev_type;
-type teecd_blkdev, dev_type;
+type teecd_block_device, dev_type;
 
 # ==========================================
 # Biometrics & TrustZone (TEE)
