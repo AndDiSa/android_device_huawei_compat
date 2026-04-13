@@ -110,13 +110,34 @@
 ###########################################
 
 /dev/block/by-name/(cust|odm|preas|product|system|vendor)                  u:object_r:system_block_device:s0
+/dev/block/by-name/kernel                                                  u:object_r:boot_block_device:s0
+/dev/block/by-name/misc                                                    u:object_r:misc_block_device:s0
+/dev/block/by-name/nvme                                                    u:object_r:nve_block_device:s0
 /dev/block/by-name/(patch|version)                                         u:object_r:metadata_block_device:s0
 /dev/block/by-name/oeminfo                                                 u:object_r:oeminfo_nvm_block_device:s0
 # Label the partitions explicitly so fsck and init can access them
-/dev/block/mmcblk0p8                                                       u:object_r:boot_block_device:s0
+/dev/block/mmcblk0p8                                                       u:object_r:nve_block_device:s0
 /dev/block/mmcblk0p10                                                      u:object_r:teecd_block_device:s0
 /dev/block/mmcblk0p17                                                      u:object_r:cache_block_device:s0
+/dev/block/mmcblk0p20                                                      u:object_r:misc_block_device:s0
+/dev/block/mmcblk0p39                                                      u:object_r:boot_block_device:s0
 /dev/block/mmcblk0p66                                                      u:object_r:userdata_block_device:s0
+# Block devices (mmc)
+/dev/block/platform/hi_mci\.0/by-name/cust                                 u:object_r:system_block_device:s0
+/dev/block/platform/hi_mci\.0/by-name/odm                                  u:object_r:system_block_device:s0
+/dev/block/platform/hi_mci\.0/by-name/preas                                u:object_r:system_block_device:s0
+/dev/block/platform/hi_mci\.0/by-name/product                              u:object_r:system_block_device:s0
+/dev/block/platform/hi_mci\.0/by-name/system                               u:object_r:system_block_device:s0
+/dev/block/platform/hi_mci\.0/by-name/vendor                               u:object_r:system_block_device:s0
+/dev/block/platform/hi_mci\.0/by-name/patch                                u:object_r:metadata_block_device:s0
+# Block devices (ufs)
+/dev/block/platform/ff3c0000\.ufs/by-name/cust                             u:object_r:system_block_device:s0
+/dev/block/platform/ff3c0000\.ufs/by-name/odm                              u:object_r:system_block_device:s0
+/dev/block/platform/ff3c0000\.ufs/by-name/preas                            u:object_r:system_block_device:s0
+/dev/block/platform/ff3c0000\.ufs/by-name/product                          u:object_r:system_block_device:s0
+/dev/block/platform/ff3c0000\.ufs/by-name/system                           u:object_r:system_block_device:s0
+/dev/block/platform/ff3c0000\.ufs/by-name/vendor                           u:object_r:system_block_device:s0
+/dev/block/platform/ff3c0000\.ufs/by-name/patch                            u:object_r:metadata_block_device:s0
 
 /3rdmodem(nvm|nvmbkp)?(/.*)?                                               u:object_r:modem_file:s0
 /splash2(/.*)?                                                             u:object_r:splash_data_file:s0
