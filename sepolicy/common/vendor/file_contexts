@@ -171,6 +171,9 @@
 
 # 2. The System Spoof Hack for wificond firmware
 /vendor/firmware(/.*)?                                                     u:object_r:same_process_hal_file:s0
+/vendor/firmware/ts(/.*)?                                                  u:object_r:vendor_firmware_file:s0
+/system/vendor/firmware/ts(/.*)?                                           u:object_r:vendor_firmware_file:s0
+/odm/etc/firmware/ts/                                                      u:object_r:vendor_firmware_file:s0
 
 /dev/hwlog_jank                                                            u:object_r:hwlog_device:s0
 /dev/hwlog_dubai                                                           u:object_r:hwlog_device:s0

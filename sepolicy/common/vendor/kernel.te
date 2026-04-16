@@ -38,6 +38,8 @@ allow kernel sysfs_cpufreq:file { open write };
 allow kernel boot_block_device:blk_file rw_file_perms;
 allow kernel huawei_data_file:dir { read open setattr };
 
+allow kernel vendor_firmware_file:dir { search };
+allow kernel vendor_firmware_file:file { open read };
 dontaudit kernel sysfs_batteryinfo:file { read open };
 
 dontaudit kernel device:chr_file { create setattr };

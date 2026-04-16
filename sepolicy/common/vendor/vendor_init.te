@@ -57,4 +57,6 @@ allow vendor_init huawei_data_file:dir { create_dir_perms setattr ioctl };
 allow vendor_init teecd_data_file:file { getattr read ioctl };
 allow vendor_init teecd_data_file:dir getattr;
 
+allow vendor_init vendor_firmware_file:dir { search };
+allow vendor_init vendor_firmware_file:file { open read };
 dontaudit vendor_init system_prop:property_service set;
