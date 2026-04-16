@@ -40,11 +40,4 @@ allow kernel huawei_data_file:dir { read open setattr };
 
 allow kernel vendor_firmware_file:dir { search };
 allow kernel vendor_firmware_file:file { open read };
-dontaudit kernel sysfs_batteryinfo:file { read open };
-
-dontaudit kernel device:chr_file { create setattr };
-dontaudit kernel device:blk_file { create setattr };
-
-dontaudit kernel huawei_data_file:dir { search getattr };
-dontaudit kernel huawei_data_file:file { getattr read append open setattr };
 
