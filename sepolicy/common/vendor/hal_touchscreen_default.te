@@ -17,3 +17,5 @@ init_daemon_domain(hal_touchscreen_default)
 binder_call(hal_touchscreen_client, hal_touchscreen_server)
 binder_call(hal_touchscreen_server, hal_touchscreen_client)
 hal_attribute_hwservice(hal_touchscreen, hal_touchscreen_hwservice)
+
+allow hal_touchscreen_default vendor_configs_file:file { open read };

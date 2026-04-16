@@ -19,6 +19,7 @@ ro.config.hw_audio_              u:object_r:vendor_hw_audio_prop:s0
 vendor.camera.                   u:object_r:vendor_camera_prop:s0
 vendor.powerhal.rendering        u:object_r:vendor_power_prop:s0
 vendor.sensor.otp.checksum       u:object_r:vendor_hw_camera_prop:s0
+persist.kirin.media.             u:object_r:vendor_kirin_media_prop:s0
 
 # ==========================================
 # Biometrics & System State

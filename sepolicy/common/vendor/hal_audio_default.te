@@ -29,3 +29,6 @@ wakelock_use(hal_audio_default)
 binder_call(hal_audio_default, system_suspend_server)
 
 get_prop(hal_audio_default, vendor_fingerprint_prop)
+
+# Allow the Audio HAL to read Huawei media properties
+get_prop(hal_audio_default, vendor_kirin_media_prop)
