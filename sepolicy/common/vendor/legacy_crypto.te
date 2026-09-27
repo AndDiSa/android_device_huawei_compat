@@ -1,0 +1,9 @@
+# ====================================================================
+# Keymaster Standalone Daemon Core Rules
+# ====================================================================
+type legacy_keymaster_exec, exec_type, vendor_file_type, file_type;
+type legacy_keymaster, domain;
+init_daemon_domain(legacy_keymaster)
+
+hal_server_domain(legacy_keymaster, hal_keymaster)
+allow legacy_keymaster vendor_file:file { r_file_perms execute };

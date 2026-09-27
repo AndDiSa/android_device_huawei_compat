@@ -56,7 +56,7 @@ typeattribute vendor_init data_between_core_and_vendor_violators;
 # Grant the permissions
 allow vendor_init huawei_data_file:dir { create_dir_perms setattr ioctl };
 allow vendor_init teecd_data_file:file { getattr read ioctl };
-allow vendor_init teecd_data_file:dir { create create getattr setattr };
+allow vendor_init teecd_data_file:dir { create getattr setattr search };
 
 allow vendor_init tmpfs:dir { write add_name create};
 allow vendor_init system_data_file:dir { ioctl open read setattr };
