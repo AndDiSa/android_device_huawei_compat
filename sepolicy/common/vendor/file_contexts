@@ -10,7 +10,7 @@
 /vendor/bin/hw/android\.hardware\.light-service\.huawei                    u:object_r:hal_light_default_exec:s0
 /vendor/bin/hw/android\.hardware\.power-service\.pixel-libperfmgr          u:object_r:hal_power_default_exec:s0
 /vendor/bin/hw/android\.hardware\.secure_element@1\.0-service\.hisi        u:object_r:hal_secure_element_default_exec:s0
-/vendor/bin/hw/android\.hardware\.hwdisplay\.displayengine@1\.2-service    u:object_r:hal_display_hwdisplay_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.huawei\.hardware\.hwdisplay\.displayengine@1\.2-service u:object_r:hal_display_hwdisplay_exec:s0
 /vendor/bin/hw/android\.hardware\.authsecret@1\.0-service                  u:object_r:hal_authsecret_default_exec:s0
 /vendor/bin/hw/android\.hardware\.nfc@1\.2-service\.sn100x                 u:object_r:hal_nfc_default_exec:s0
 /vendor/bin/hw/android\.hardware\.nfc@1\.2-service\.st                     u:object_r:hal_nfc_default_exec:s0
@@ -182,13 +182,15 @@
 # Label the partitions explicitly so fsck and init can access them
 /dev/block/mmcblk0p8                                                       u:object_r:nve_block_device:s0
 /dev/block/mmcblk0p10                                                      u:object_r:oeminfo_nvm_block_device:s0
+/dev/block/mmcblk0p17                                                      u:object_r:cache_block_device:s0
 /dev/block/mmcblk0p20                                                      u:object_r:misc_block_device:s0
 /dev/block/mmcblk0p38                                                      u:object_r:teecd_block_device:s0
+/dev/block/mmcblk0p39                                                      u:object_r:boot_block_device:s0
 
 /dev/block/mmcblk0p11                                                      u:object_r:teecd_block_device:s0
 
 /dev/block/mmcblk0p60                                                      u:object_r:cache_block_device:s0
-/dev/block/mmcblk0p66                                                      u:object_r:system_block_device:s0
+/dev/block/mmcblk0p66                                                      u:object_r:userdata_block_device:s0
 /dev/block/mmcblk0p70                                                      u:object_r:userdata_block_device:s0
 
 /dev/block/mmcblk0p13                                                      u:object_r:modemnvm_block_device:s0

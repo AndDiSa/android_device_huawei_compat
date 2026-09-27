@@ -17,4 +17,7 @@ allow wificond same_process_hal_file:file { read open };
 allow wificond hi110x_cust_data_file:lnk_file read;
 allow wificond hi110x_cust_data_file:dir search;
 
+allow wificond vendor_data_file:lnk_file read;
+allow wificond vendor_file:dir search;
+
 allow wificond same_process_hal_file:file { read open getattr };

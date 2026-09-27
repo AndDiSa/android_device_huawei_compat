@@ -7,3 +7,5 @@ allow hal_light_default sysfs_backlight:file { getattr open read write };
 allow hal_light_default sysfs_led:dir { search };
 allow hal_light_default sysfs_led:file { read open write getattr };
 
+allow hal_light_default sysfs:file { getattr open read write };
+
