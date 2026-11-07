@@ -35,6 +35,8 @@ static const std::string kDutyPctsNode = "duty_pcts";
 static const std::string kPauseLoNode = "pause_lo";
 static const std::string kPauseHiNode = "pause_hi";
 static const std::string kRampStepMsNode = "ramp_step_ms";
+static const std::string kDelayOnNode = "delay_on";
+static const std::string kDelayOffNode = "delay_off";
 
 static constexpr int kRampSteps = 8;
 static constexpr int kRampMaxStepDurationMs = 50;
@@ -58,6 +60,9 @@ LedDevice::LedDevice(std::string name)
                      std::ifstream(mBasePath + kPauseLoNode).good() &&
                      std::ifstream(mBasePath + kPauseHiNode).good() &&
                      std::ifstream(mBasePath + kRampStepMsNode).good();
+
+    mSupportsDelay = std::ifstream(mBasePath + kDelayOnNode).good() &&
+                     std::ifstream(mBasePath + kDelayOffNode).good();
 }
 
 std::string LedDevice::getName() const {
@@ -69,7 +74,7 @@ bool LedDevice::supportsBreath() const {
 }
 
 bool LedDevice::supportsTimed() const {
-    return mSupportsTimed;
+    return mSupportsTimed || mSupportsDelay;
 }
 
 bool LedDevice::exists() const {
@@ -93,8 +98,16 @@ bool LedDevice::setBrightness(uint8_t value, LightMode mode, uint32_t flashOnMs,
     if (mSupportsTimed) {
         writeToFile(mBasePath + kBlinkNode, 0);
     }
+    if (mSupportsDelay) {
+        writeToFile(mBasePath + kDelayOnNode, 0);
+        writeToFile(mBasePath + kDelayOffNode, 0);
+    }
     if (supportsBreath()) {
         writeToFile(mBasePath + mBreathNode, 0);
+    }
+
+    if (value == 0) {
+        return writeToFile(mBasePath + kBrightnessNode, 0);
     }
 
     switch (mode) {
@@ -115,6 +128,10 @@ bool LedDevice::setBrightness(uint8_t value, LightMode mode, uint32_t flashOnMs,
                        writeToFile(mBasePath + kPauseHiNode, pauseHi) &&
                        writeToFile(mBasePath + kRampStepMsNode, stepDuration) &&
                        writeToFile(mBasePath + kBlinkNode, 1);
+            } else if (mSupportsDelay) {
+                return writeToFile(mBasePath + kBrightnessNode, scaleBrightness(value, mMaxBrightness)) &&
+                       writeToFile(mBasePath + kDelayOnNode, flashOnMs) &&
+                       writeToFile(mBasePath + kDelayOffNode, flashOffMs);
             }
 
             // Fallthrough to breath mode if timed is not supported
@@ -149,6 +166,7 @@ void LedDevice::dump(int fd) const {
     dprintf(fd, ", max brightness: %u", mMaxBrightness);
     dprintf(fd, ", supports breath: %d", supportsBreath());
     dprintf(fd, ", supports timed: %d", supportsTimed());
+    dprintf(fd, ", supports delay: %d", mSupportsDelay);
     dprintf(fd, ", breath node: %s", mBreathNode.c_str());
 }
 
