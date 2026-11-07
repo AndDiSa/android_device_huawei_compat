@@ -141,3 +141,6 @@ hwlog.remotedebug                u:object_r:vendor_oem_prop:s0
 # Huawei specific
 ro.userlock                      u:object_r:vendor_oem_prop:s0
 ro.enter_erecovery               u:object_r:vendor_oem_prop:s0
+
+# Recovery USB Properties
+ro.recovery.usb.                 u:object_r:vendor_default_prop:s0
