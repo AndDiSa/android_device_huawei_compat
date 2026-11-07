@@ -10,7 +10,6 @@
 /vendor/bin/hw/android\.hardware\.light-service\.huawei                    u:object_r:hal_light_default_exec:s0
 /vendor/bin/hw/android\.hardware\.power-service\.pixel-libperfmgr          u:object_r:hal_power_default_exec:s0
 /vendor/bin/hw/android\.hardware\.secure_element@1\.0-service\.hisi        u:object_r:hal_secure_element_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.huawei\.hardware\.hwdisplay\.displayengine@1\.2-service u:object_r:hal_display_hwdisplay_exec:s0
 /vendor/bin/hw/android\.hardware\.authsecret@1\.0-service                  u:object_r:hal_authsecret_default_exec:s0
 /vendor/bin/hw/android\.hardware\.nfc@1\.2-service\.sn100x                 u:object_r:hal_nfc_default_exec:s0
 /vendor/bin/hw/android\.hardware\.nfc@1\.2-service\.st                     u:object_r:hal_nfc_default_exec:s0
@@ -25,6 +24,7 @@
 /vendor/bin/hw/vendor\.huawei\.hardware\.graphics\.mediacomm@2\.[01]-service u:object_r:hal_graphics_composer_default_exec:s0
 /vendor/bin/hw/vendor\.huawei\.hardware\.hisupl@1\.0-service               u:object_r:hal_hisupl_default_exec:s0
 /vendor/bin/hw/vendor\.huawei\.hardware\.hwdisplay@1\.0-service            u:object_r:hal_display_hwdisplay_exec:s0
+/vendor/bin/hw/vendor\.huawei\.hardware\.hwdisplay\.displayengine@1\.2-service    u:object_r:hal_display_hwdisplay_exec:s0
 /vendor/bin/hw/vendor\.huawei\.hardware\.libteec@[23]\.0-service           u:object_r:hal_libteec_default_exec:s0
 /vendor/bin/hw/vendor\.huawei\.hardware\.nfc@1\.0-service                  u:object_r:hal_nfc_default_exec:s0
 /vendor/bin/hw/vendor\.huawei\.hardware\.tp@1\.0-service                   u:object_r:hal_touchscreen_default_exec:s0

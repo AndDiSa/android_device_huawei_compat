@@ -41,6 +41,8 @@ allow init sysfs:file { setattr };
 allow init sysfs_led:file { setattr };
 
 allow init tmpfs:blk_file { open read };
+allow init cache_block_device:blk_file { relabelto };
+allow init modemnvm_block_device:blk_file { relabelto };
 allow init teecd_block_device:blk_file { relabelto };
 allow init oeminfo_nvm_block_device:lnk_file { relabelto };
 allow init oeminfo_nvm_block_device:blk_file { relabelto };

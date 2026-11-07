@@ -36,6 +36,7 @@ allow vendor_init socket_device:sock_file setattr;
 # ==========================================
 # Set vendor-specific initial boot properties
 set_prop(vendor_init, vendor_camera_prop)
+set_prop(vendor_init, vendor_hw_audio_prop)
 set_prop(vendor_init, vendor_kirin_media_prop)
 set_prop(vendor_init, vendor_radio_prop)
 set_prop(vendor_init, vendor_fingerprint_prop)

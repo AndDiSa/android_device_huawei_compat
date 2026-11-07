@@ -1,5 +1,5 @@
 #============= system_app ==============
-allow system_app hal_hisupl_default:binder { call transfer };
+hal_client_domain(system_app, hal_hisupl)
 
 allow system_app proc_pagetypeinfo:file { read };
 allow system_app sysfs_zram:dir { search };
