@@ -17,7 +17,11 @@ allow tee hal_gatekeeper_default:process getattr;
 
 allow tee hal_keymaster_default:dir search;
 allow tee hal_keymaster_default:file { getattr open read };
-allow tee hal_keymaster_default:process getattr; 
+allow tee hal_keymaster_default:process getattr;
+
+allow tee hal_libteec_default:dir search;
+allow tee hal_libteec_default:file { getattr open read };
+allow tee hal_libteec_default:process getattr; 
 
 allow tee hisi_touchscreen:dir { search };
 allow tee hisi_touchscreen:file { open read getattr};
