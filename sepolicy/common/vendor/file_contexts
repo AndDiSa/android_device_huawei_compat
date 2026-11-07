@@ -26,9 +26,6 @@
 /vendor/bin/hw/vendor\.huawei\.hardware\.hwdisplay@1\.0-service            u:object_r:hal_display_hwdisplay_exec:s0
 /vendor/bin/hw/vendor\.huawei\.hardware\.hwdisplay\.displayengine@1\.2-service    u:object_r:hal_display_hwdisplay_exec:s0
 /vendor/bin/hw/vendor\.huawei\.hardware\.libteec@[23]\.0-service           u:object_r:hal_libteec_default_exec:s0
-/vendor/bin/hw/android\.hardware\.keymaster@3\.0-service                      u:object_r:hal_libteec_default_exec:s0
-/vendor/bin/hw/android\.hardware\.gatekeeper@1\.0-service                     u:object_r:hal_libteec_default_exec:s0
-/vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.huawei u:object_r:hal_libteec_default_exec:s0
 /vendor/bin/hw/vendor\.huawei\.hardware\.nfc@1\.0-service                  u:object_r:hal_nfc_default_exec:s0
 /vendor/bin/hw/vendor\.huawei\.hardware\.tp@1\.0-service                   u:object_r:hal_touchscreen_default_exec:s0
 

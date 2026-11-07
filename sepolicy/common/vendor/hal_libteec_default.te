@@ -1,14 +1,8 @@
 # ==========================================
-# hal_libteec_default.te (Huawei TEE Client & Secure World Services)
+# hal_libteec_default.te (Huawei TEE Client)
 # ==========================================
 type hal_libteec_default, domain;
 hal_server_domain(hal_libteec_default, hal_libteec)
-
-# Huawei teecd validates client domain via getpidcon and accepts u:r:hal_libteec_default:s0.
-# Run keymaster, gatekeeper, and fingerprint under hal_libteec_default to pass TEE authentication.
-hal_server_domain(hal_libteec_default, hal_keymaster)
-hal_server_domain(hal_libteec_default, hal_gatekeeper)
-hal_server_domain(hal_libteec_default, hal_fingerprint)
 
 type hal_libteec_default_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(hal_libteec_default)
@@ -17,26 +11,3 @@ init_daemon_domain(hal_libteec_default)
 binder_call(hal_libteec_client, hal_libteec_server)
 binder_call(hal_libteec_server, hal_libteec_client)
 hal_attribute_hwservice(hal_libteec, hal_libteec_hwservice)
-
-# Direct communication with the TEE device and daemon
-allow hal_libteec_default tee:fd use;
-allow hal_libteec_default tee:unix_stream_socket connectto;
-allow hal_libteec_default teecd_device:chr_file { ioctl read write open map };
-
-# Fingerprint Hardware Interfacing
-allow hal_libteec_default dsm_device:chr_file rw_file_perms;
-allow hal_libteec_default fps_device:chr_file { ioctl open read write };
-allow hal_libteec_default fpshub_device:chr_file { read write open ioctl };
-allow hal_libteec_default sysfs:file write;
-
-# Fingerprint IPC, Properties & Power HAL
-get_prop(hal_libteec_default, vendor_fingerprint_prop)
-binder_call(hal_libteec_default, hal_power_default)
-hal_client_domain(hal_libteec_default, hal_power)
-
-# Fingerprint Logging & Data Files
-allow hal_libteec_default vendor_log_file:dir search;
-allow hal_libteec_default vendor_log_file:file { open read };
-allow hal_libteec_default vendor_kernel_log_file:dir { search write add_name };
-allow hal_libteec_default vendor_kernel_log_file:file { create open read write };
-allow hal_libteec_default vendor_data_file:file { read open };
