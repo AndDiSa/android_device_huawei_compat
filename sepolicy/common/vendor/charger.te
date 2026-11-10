@@ -4,7 +4,7 @@
 # Huawei charger
 # Base daemon for Huawei's hw_charger animation
 
-allow charger rootfs:file { ioctl read getattr lock map execute entrypoint open };
+allow charger rootfs:file { ioctl read getattr lock map open };
 allow charger self:capability2 { wake_alarm };
 
 # Allow charger to read and write to sysfs_power

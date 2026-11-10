@@ -8,6 +8,7 @@ allow fsck system_data_file:blk_file rw_file_perms;
 # Allow fsck to repair connectivity and security partitions
 allow fsck connectivity_block_device:blk_file { rw_file_perms ioctl };
 allow fsck sec_storage_block_device:blk_file { rw_file_perms ioctl };
+allow fsck oeminfo_nvm_block_device:blk_file { rw_file_perms ioctl };
 
 # Modem
 allow fsck modem_secure_device:blk_file rw_file_perms;

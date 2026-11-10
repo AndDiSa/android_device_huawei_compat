@@ -7,3 +7,4 @@ allow hal_gnss_default hi110x_data_file:sock_file write;
 allow hal_gnss_default sysfs:file { getattr open read };
 
 allow hal_gnss_default proc_gps_type:dir { search };
+allow hal_gnss_default proc_gps_type:file r_file_perms;

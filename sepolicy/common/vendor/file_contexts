@@ -53,7 +53,7 @@
 /vendor/bin/teecd                                                          u:object_r:tee_exec:s0
 /vendor/bin/wpa_supplicant_hisi                                            u:object_r:hal_wifi_supplicant_default_exec:s0
 /vendor/bin/aptouch_daemon                                                 u:object_r:hisi_touchscreen_exec:s0
-/vendor/bin/hw_charger                                                     u:object_r:charger_exec:s0
+/vendor/bin/hw_charger                                                     u:object_r:vendor_file:s0
 /vendor/bin/hiaiserver                                                     u:object_r:hiaiserver_exec:s0
 
 # Teecd
@@ -177,6 +177,8 @@
 
 /dev/block/by-name/(cust|odm|preas|product|system|vendor)                  u:object_r:system_block_device:s0
 /dev/block/by-name/kernel                                                  u:object_r:boot_block_device:s0
+/dev/block/by-name/recovery_ramdisk                                        u:object_r:recovery_block_device:s0
+/dev/block/by-name/cache                                                   u:object_r:cache_block_device:s0
 /dev/block/by-name/misc                                                    u:object_r:misc_block_device:s0
 /dev/block/by-name/nvme                                                    u:object_r:nve_block_device:s0
 /dev/block/by-name/(patch|version)                                         u:object_r:metadata_block_device:s0
@@ -185,8 +187,10 @@
 # Label the partitions explicitly so fsck and init can access them
 /dev/block/mmcblk0p8                                                       u:object_r:nve_block_device:s0
 /dev/block/mmcblk0p10                                                      u:object_r:oeminfo_nvm_block_device:s0
+/dev/block/mmcblk0p17                                                      u:object_r:cache_block_device:s0
 /dev/block/mmcblk0p20                                                      u:object_r:misc_block_device:s0
 /dev/block/mmcblk0p38                                                      u:object_r:teecd_block_device:s0
+/dev/block/mmcblk0p41                                                      u:object_r:recovery_block_device:s0
 
 /dev/block/mmcblk0p11                                                      u:object_r:teecd_block_device:s0
 

@@ -49,6 +49,9 @@ dontaudit system_server shell:process getattr;
 # dontaudit system_server folio_daemon:process getattr;
 # dontaudit system_server mediaprovider_app:process getattr;
 
+# Chromium / WebView isolated render process attempts setattr on app cache
+dontaudit isolated_app app_data_file:file setattr;
+
 dontaudit { appdomain -isolated_app } sysfs_cpufreq:dir search;
 dontaudit { appdomain -isolated_app } sysfs_cpufreq:file r_file_perms;
 
