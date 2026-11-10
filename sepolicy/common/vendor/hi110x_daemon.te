@@ -104,3 +104,6 @@ allow hi110x_daemon hwservicemanager_prop:file { read getattr map open };
 # Allow two-way binder communication with system_server
 binder_call(hi110x_daemon, system_server)
 binder_call(system_server, hi110x_daemon)
+
+# Allow daemon to find Android sensor manager service for GNSS sensor fusion
+allow hi110x_daemon fwk_sensor_hwservice:hwservice_manager find;
